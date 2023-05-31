@@ -1,7 +1,7 @@
 # sentiment
 
-crypto fear and greed / sentiment data<br>
-very simple package, gets sentimentdata from from https://alternative.me
+crypto sentiment / fear and greed index<br>
+very simple package, gets sentiment data from https://alternative.me
 
 ```
 // get latest sentimentData
