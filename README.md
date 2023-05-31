@@ -5,7 +5,7 @@ very simple package, gets sentiment data from https://alternative.me
 
 ```
 // get latest sentimentData
-// replace 0 with number of days you want data from
+// replace 0 with number of days you want data for
 sentimentData, err := sentiment.GetSentiment(1)
 if err != nil {
     panic(err)
