@@ -10,9 +10,9 @@ import (
 )
 
 type SentimentData struct {
-	Value     int
-	ValueName string
-	Timestamp time.Time
+	Value int
+	Name  string
+	Time  time.Time
 }
 
 type Sentiment []SentimentData
@@ -21,8 +21,8 @@ type sentimentBlob struct {
 	Name string `json:"name"`
 	Data []struct {
 		Value     string `json:"value"`
-		ValueName string `json:"value_classification"`
-		Timestamp string `json:"timestamp"`
+		Name      string `json:"value_classification"`
+		Time      string `json:"timestamp"`
 		TimeUntil string `json:"time_until_update"`
 	}
 	Metadata interface{} `json:"metadata"`
@@ -46,10 +46,10 @@ func GetSentiment(limit int) (Sentiment, error) {
 	var list = make(Sentiment, len(blob.Data))
 	for i, v := range blob.Data {
 		val, _ := strconv.Atoi(v.Value)
-		ts, _ := strconv.Atoi(v.Timestamp)
+		ts, _ := strconv.Atoi(v.Time)
 		list[i].Value = val
-		list[i].ValueName = v.ValueName
-		list[i].Timestamp = time.Unix(int64(ts), 0)
+		list[i].Name = v.Name
+		list[i].Time = time.Unix(int64(ts), 0)
 	}
 
 	return list, nil
