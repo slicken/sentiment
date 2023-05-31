@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// get latest sentimentData
-	// replace 0 with number of days you want data from
+	// replace 0 with number of days you want data for
 	sentimentData, err := sentiment.GetSentiment(0)
 	if err != nil {
 		panic(err)
